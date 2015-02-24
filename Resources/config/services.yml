@@ -1,0 +1,33 @@
+parameters:
+    smile.tracking.twig_extension.class: Smile\SimpleTrackingBundle\Twig\Extension\TrackingExtension
+    smile.tracking.manager.class: Smile\SimpleTrackingBundle\Manager\TrackingManager
+    smile.tracking.update_data_command.class: Smile\SimpleTrackingBundle\Command\TrackingDataUpdateCommand
+    smile.tracking.logger.class: Symfony\Bridge\Monolog\Logger
+    smile.tracking.logger_handler.class: Monolog\Handler\StreamHandler
+
+services:
+    smile.tracking.manager:
+        class: %smile.tracking.manager.class%
+        arguments: [@doctrine.orm.entity_manager]
+
+    smile.tracking.twig_extension:
+        class: %smile.tracking.twig_extension.class%
+        arguments: [@router]
+        tags:
+            - { name: twig.extension }
+
+    smile.tracking.update_data_command:
+        class: %smile.tracking.update_data_command.class%
+        arguments: [@smile.tracking.manager, @smile.tracking.logger]
+        tags:
+            - { name: console.command }
+
+    smile.tracking.logger:
+        class: %smile.tracking.logger.class%
+        arguments: ['tracking']
+        calls:
+            - [pushHandler, [@smile.tracking.logger_handler]]
+
+    smile.tracking.logger_handler:
+        class: %smile.tracking.logger_handler.class%
+        arguments: [%kernel.logs_dir%/%kernel.environment%.tracking.log, 200]
