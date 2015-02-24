@@ -31,6 +31,7 @@ class TrackingExtension extends \Twig_Extension
     }
 
     /**
+     * Add invisible pixel in the page
      * @param string  $type
      * @param integer $id
      *

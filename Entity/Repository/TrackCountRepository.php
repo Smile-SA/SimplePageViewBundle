@@ -11,6 +11,7 @@ use Doctrine\ORM\EntityRepository;
 class TrackCountRepository extends EntityRepository
 {
     /**
+     * Count trackCount by type trackID and type before datefilter
      * @param string  $type
      * @param integer $trackId
      * @param string  $dateFilter

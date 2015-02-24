@@ -28,6 +28,7 @@ class TrackRepository extends EntityRepository
     }
 
     /**
+     * Count Track by type trackId and date
      * @param array
      *
      * @return integer
@@ -48,7 +49,10 @@ class TrackRepository extends EntityRepository
     }
 
     /**
-     * @param \DateTime $dateFilter
+     * Remove track before datefilter
+     * @param $dateFilter
+     * @return \Doctrine\DBAL\Driver\Statement
+     * @throws \Doctrine\DBAL\DBALException
      */
     public function removeTracks($dateFilter)
     {

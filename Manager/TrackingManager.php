@@ -33,6 +33,7 @@ class TrackingManager
     }
 
     /**
+     *
      * @return array
      */
     public function getTracks()

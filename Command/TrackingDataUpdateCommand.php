@@ -68,6 +68,7 @@ class TrackingDataUpdateCommand extends Command
     }
 
     /**
+     * Get all Track Data By date and create Track count
      * @return array
      */
     public function handleTrackCounts()
@@ -90,6 +91,7 @@ class TrackingDataUpdateCommand extends Command
     }
 
     /**
+     * Create or Update track count
      * @param integer $count
      * @param array   $filters
      */

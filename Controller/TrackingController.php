@@ -18,6 +18,7 @@ use Smile\TrackingBundle\Http\TransparentPixelResponse;
 class TrackingController extends Controller
 {
     /**
+     * Save Track Data at kernel event terminate
      * @Route("/{type}/{id}", name="smile_tracking_track")
      */
     public function trackAction($type, $id)
