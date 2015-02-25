@@ -1,10 +1,10 @@
 <?php
 
-namespace Smile\SimpleTrackingBundle\Manager;
+namespace Smile\Bundle\SimpleTrackingBundle\Manager;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\EntityRepository;
-use Smile\SimpleTrackingBundle\Entity\Track;
+use Smile\Bundle\SimpleTrackingBundle\Entity\Track;
 
  /**
  * @author    Florian Touya <fltou@smile.fr>

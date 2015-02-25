@@ -1,6 +1,6 @@
 <?php
 
-namespace Smile\SimpleTrackingBundle\Entity;
+namespace Smile\Bundle\SimpleTrackingBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @author    Florian Touya <fltou@smile.fr>
  * @copyright 2015 Smile (http://www.smile.fr)
  *
- * @ORM\Entity(repositoryClass="Smile\SimpleTrackingBundle\Entity\Repository\TrackCountRepository")
+ * @ORM\Entity(repositoryClass="Smile\Bundle\SimpleTrackingBundle\Entity\Repository\TrackCountRepository")
  * @ORM\Table(name="tracking_track_count")
  */
 class TrackCount

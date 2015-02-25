@@ -1,13 +1,13 @@
 <?php
 
-namespace Smile\SimpleTrackingBundle\Controller;
+namespace Smile\Bundle\SimpleTrackingBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpKernel\Event\PostResponseEvent;
-use Smile\TrackingBundle\Http\TransparentPixelResponse;
+use Smile\Bundle\SimpleTrackingBundle\Http\TransparentPixelResponse;
 
  /**
  * @author    Florian Touya <mxdup@smile.fr>

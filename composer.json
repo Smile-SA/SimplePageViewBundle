@@ -1,0 +1,12 @@
+{
+    "name": "smile/simple-tracking-bundle",
+    "type": "symfony-bundle",
+    "description": "An easy way to include a light and simple tracking system in your website.",
+    "keywords": ["tracking", "symfony", "Bundle"],
+    "homepage": "https://github.com/jbouzekri/SimpleTrackingBundle",
+    "license": "MIT",
+    "autoload": {
+        "psr-0": { "Smile\\Bundle\\SimpleTrackingBundle": "" }
+    },
+    "target-dir": "Smile/Bundle/SimpleTrackingBundle"
+}

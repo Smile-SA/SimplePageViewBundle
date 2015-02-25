@@ -1,6 +1,6 @@
 <?php
 
-namespace Smile\SimpleTrackingBundle\Http;
+namespace Smile\Bundle\SimpleTrackingBundle\Http;
 
 use Symfony\Component\HttpFoundation\Response;
 

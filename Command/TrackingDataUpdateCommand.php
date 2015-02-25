@@ -1,13 +1,13 @@
 <?php
 
-namespace Smile\SimpleTrackingBundle\Command;
+namespace Smile\Bundle\SimpleTrackingBundle\Command;
 
 use Symfony\Component\Console\Command\Command;
-use Smile\SimpleTrackingBundle\Manager\TrackingManager;
+use Smile\Bundle\SimpleTrackingBundle\Manager\TrackingManager;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Smile\SimpleTrackingBundle\Entity\TrackCount;
+use Smile\Bundle\SimpleTrackingBundle\Entity\TrackCount;
 
  /**
  * @author    Florian Touya <fltou@smile.fr>
@@ -28,6 +28,10 @@ class TrackingDataUpdateCommand extends Command
     private $commandStartTime;
 
 
+    /**
+     * @param TrackingManager $manager
+     * @param LoggerInterface $logger
+     */
     public function __construct(TrackingManager $manager, LoggerInterface $logger)
     {
         $this->manager          = $manager;
@@ -55,7 +59,6 @@ class TrackingDataUpdateCommand extends Command
     {
         $this->input  = $input;
         $this->output = $output;
-
 
         try {
             $this->handleTrackCounts();
@@ -97,6 +100,7 @@ class TrackingDataUpdateCommand extends Command
      */
     public function saveTrackCount($count, $filters)
     {
+
         $trackCount = $this->manager->getTrackCountByType($filters['type'], $filters['trackId'], $filters['date']);
 
         if (!$trackCount) {

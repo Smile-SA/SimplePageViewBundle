@@ -1,6 +1,6 @@
 <?php
 
-namespace Smile\SimpleTrackingBundle\Entity\Repository;
+namespace Smile\Bundle\SimpleTrackingBundle\Entity\Repository;
 
 use Doctrine\ORM\EntityRepository;
 

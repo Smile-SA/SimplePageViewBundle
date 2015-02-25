@@ -1,6 +1,6 @@
 <?php
 
-namespace Smile\SimpleTrackingBundle;
+namespace Smile\Bundle\SimpleTrackingBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

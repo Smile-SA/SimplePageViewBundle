@@ -1,7 +1,7 @@
 parameters:
-    smile.tracking.twig_extension.class: Smile\SimpleTrackingBundle\Twig\Extension\TrackingExtension
-    smile.tracking.manager.class: Smile\SimpleTrackingBundle\Manager\TrackingManager
-    smile.tracking.update_data_command.class: Smile\SimpleTrackingBundle\Command\TrackingDataUpdateCommand
+    smile.tracking.twig_extension.class: Smile\Bundle\SimpleTrackingBundle\Twig\Extension\TrackingExtension
+    smile.tracking.manager.class: Smile\Bundle\SimpleTrackingBundle\Manager\TrackingManager
+    smile.tracking.update_data_command.class: Smile\Bundle\SimpleTrackingBundle\Command\TrackingDataUpdateCommand
     smile.tracking.logger.class: Symfony\Bridge\Monolog\Logger
     smile.tracking.logger_handler.class: Monolog\Handler\StreamHandler
 

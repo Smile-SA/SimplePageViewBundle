@@ -1,8 +1,8 @@
 <?php
 
-namespace Smile\SimpleTrackingBundle\Twig\Extension;
+namespace Smile\Bundle\SimpleTrackingBundle\Twig\Extension;
 
-use Smile\SimpleTrackingBundle\Manager\TrackingManager;
+use Smile\Bundle\SimpleTrackingBundle\Manager\TrackingManager;
 use Symfony\Bundle\FrameworkBundle\Routing\Router;
 
  /**
