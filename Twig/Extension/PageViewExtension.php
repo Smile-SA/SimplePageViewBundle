@@ -1,20 +1,24 @@
 <?php
 
-namespace Smile\Bundle\SimpleTrackingBundle\Twig\Extension;
+namespace Smile\Bundle\SimplePageViewBundle\Twig\Extension;
 
-use Smile\Bundle\SimpleTrackingBundle\Manager\TrackingManager;
+use Smile\Bundle\SimplePageViewBundle\Manager\PageViewManager;
 use Symfony\Bundle\FrameworkBundle\Routing\Router;
 
  /**
  * @author    Florian Touya <mxdup@smile.fr>
  * @copyright 2015 Smile (http://www.smile.fr)
  */
-class TrackingExtension extends \Twig_Extension
+class PageViewExtension extends \Twig_Extension
 {
     /** @var Router $router */
     private $router;
 
-
+    /**
+     * Constructor
+     *
+     * @param Router $router
+     */
     public function __construct(Router $router)
     {
         $this->router = $router;
@@ -26,7 +30,7 @@ class TrackingExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            new \Twig_SimpleFunction('track', array($this, 'track'), array('is_safe' => array('html')))
+            new \Twig_SimpleFunction('smile_page_view', array($this, 'pageView'), array('is_safe' => array('html')))
         );
     }
 
@@ -37,11 +41,11 @@ class TrackingExtension extends \Twig_Extension
      *
      * @return string
      */
-    public function track($type, $id)
+    public function pageView($type, $id = null)
     {
-        $url = $this->router->generate('smile_tracking_track', array('type' => $type, 'id' => $id));
+        $url = $this->router->generate('smile_page_view_persist', array('type' => $type, 'id' => $id));
 
-        return sprintf('<img style="display:none;" alt="track" src="%s">', $url);
+        return sprintf('<img style="display:none;" alt="page_view" src="%s">', $url);
     }
 
     /**
@@ -49,6 +53,6 @@ class TrackingExtension extends \Twig_Extension
      */
     public function getName()
     {
-        return 'tracking';
+        return 'smile_page_view';
     }
 }

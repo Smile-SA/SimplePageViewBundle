@@ -1,12 +1,12 @@
 {
-    "name": "smile/simple-tracking-bundle",
+    "name": "smile/simple-page-view-bundle",
     "type": "symfony-bundle",
-    "description": "An easy way to include a light and simple tracking system in your website.",
-    "keywords": ["tracking", "symfony", "Bundle"],
-    "homepage": "https://github.com/jbouzekri/SimpleTrackingBundle",
+    "description": "An easy way to include a light and simple page view counting system in your website",
+    "keywords": ["Page view", "tracking", "symfony", "Bundle"],
+    "homepage": "https://github.com/Smile-SA/SimplePageViewBundle",
     "license": "MIT",
     "autoload": {
-        "psr-0": { "Smile\\Bundle\\SimpleTrackingBundle": "" }
+        "psr-0": { "Smile\\Bundle\\SimplePageViewBundle": "" }
     },
-    "target-dir": "Smile/Bundle/SimpleTrackingBundle"
+    "target-dir": "Smile/Bundle/SimplePageViewBundle"
 }

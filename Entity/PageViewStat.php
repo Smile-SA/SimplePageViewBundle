@@ -1,6 +1,6 @@
 <?php
 
-namespace Smile\Bundle\SimpleTrackingBundle\Entity;
+namespace Smile\Bundle\SimplePageViewBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,10 +8,10 @@ use Doctrine\ORM\Mapping as ORM;
  * @author    Florian Touya <fltou@smile.fr>
  * @copyright 2015 Smile (http://www.smile.fr)
  *
- * @ORM\Entity(repositoryClass="Smile\Bundle\SimpleTrackingBundle\Entity\Repository\TrackCountRepository")
- * @ORM\Table(name="tracking_track_count")
+ * @ORM\Entity(repositoryClass="Smile\Bundle\SimplePageViewBundle\Entity\Repository\PageViewStatRepository")
+ * @ORM\Table(name="smile_page_view_stats")
  */
-class TrackCount
+class PageViewStat
 {
     /**
      * @var integer
@@ -25,16 +25,16 @@ class TrackCount
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=50, name="page_type")
      */
-    private $type;
+    private $pageType;
 
     /**
      * @var integer
      *
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true, name="page_id")
      */
-    private $trackId;
+    private $pageId;
 
     /**
      * @var integer
@@ -49,13 +49,6 @@ class TrackCount
      * @ORM\Column(type="date", nullable=true)
      */
     private $date;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(type="time", nullable=true)
-     */
-    private $time;
 
 
     /**
@@ -81,19 +74,19 @@ class TrackCount
     /**
      * @return string
      */
-    public function getType()
+    public function getPageType()
     {
-        return $this->type;
+        return $this->pageType;
     }
 
     /**
-     * @param string $type
+     * @param string $pageType
      *
      * @return this
      */
-    public function setType($type)
+    public function setPageType($pageType)
     {
-        $this->type = $type;
+        $this->pageType = $pageType;
 
         return $this;
     }
@@ -121,19 +114,19 @@ class TrackCount
     /**
      * @return integer
      */
-    public function getTrackId()
+    public function getPageId()
     {
-        return $this->trackId;
+        return $this->pageId;
     }
 
     /**
-     * @param integer $trackId
+     * @param integer $pageId
      *
      * @return this
      */
-    public function setTrackId($trackId)
+    public function setPageId($pageId)
     {
-        $this->trackId = $trackId;
+        $this->pageId = $pageId;
 
         return $this;
     }
@@ -154,26 +147,6 @@ class TrackCount
     public function setDate(\DateTime $date)
     {
         $this->date = $date;
-
-        return $this;
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getTime()
-    {
-        return $this->time;
-    }
-
-    /**
-     * @param \DateTime $time
-     *
-     * @return this
-     */
-    public function setTime(\DateTime $time)
-    {
-        $this->time = $time;
 
         return $this;
     }
